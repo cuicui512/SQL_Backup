@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 '''
  @project: Caculate
@@ -44,7 +45,13 @@ def uploadfile(ftp, remotepath, localpath):
     fp.close()
     endTime = time.time()
     print("uploaded successful")
-    print("长传总共花费时间：",endTime-beginTime,'s')
+    print("长传总共花费时间：", endTime - beginTime, 's')
+    # 删除7天前的备份文件
+    # 判断文件是否存在
+    if (os.path.exists('/home/linxin/mysqlBackup/' + str(yesterdayFileName))):
+        os.remove('/home/linxin/mysqlBackup/' + str(yesterdayFileName))
+        print('移除7天前的备份')
+    
 
 
 # 定义/创建备份存储目录
