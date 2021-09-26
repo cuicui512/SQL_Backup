@@ -14,4 +14,5 @@
 2. connectionrefusederror: [winerror 10061] 由于目标计算机积极拒绝，无法连接    可能是服务端还没有安装/启动ftp服务
 3. ftp上传文件时报错：ftplib.error_perm: 550 Permission denied   修改ftp服务器配置文件中可写属性  [参考链接](https://blog.csdn.net/xiemanR/article/details/53325111)
 4. ftp上传文件时报错：ftplib.error_perm: 553 Could not create file    当前登录的用户在ftp传输的文件夹没有写入权限 [参考链接](https://blog.csdn.net/weixin_30274627/article/details/98071355)
+5. 有一个很重要的问题，当前这样实现传输的速度很慢，可能是python read()函数读取的速度，所以又上传了一个Linux下直接调用scp命令的脚本，Windows下的解决办法同样是调用scp命令，但是需要先安装其他工具软件
 
